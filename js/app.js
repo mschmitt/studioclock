@@ -13,7 +13,7 @@ if (urlParams.has('update_interval_ms')){
 console.log('Will update every ' + update_interval_ms + ' milliseconds.');
 
 // customization of title above digital clock
-var title = 'STUDIO';
+var studio = 'STUDIO';
 if (urlParams.has('studio')){
         studio = urlParams.get('studio');
 	studio = DOMPurify.sanitize(studio);
@@ -186,6 +186,11 @@ function updateClock() {
 
 	clock.textContent = clockStr;
 	day.textContent = dateFormat;
+
+	if ( studio === '_dow_' ) {
+		console.log('hallo');
+		document.getElementById('studio').innerHTML = time.toLocaleDateString(navigator.language, { weekday: 'long' });
+	}
 	
 	if ( secondsInt == 0 ) {
 		initInnerClock(theDotsInner,0,colorInner);
