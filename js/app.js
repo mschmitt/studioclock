@@ -21,19 +21,23 @@ if (urlParams.has('studio')){
 }
 console.log('Studio name: ' + studio);
 
-// Disable 00-55 labels?
-// FIXME: Geometry, fudge radiuses below
-if (urlParams.has('labels') && (urlParams.get('labels') == 'none')){
-	console.log('No labels.');
-	var labels = document.querySelectorAll('.labels');
-	labels.forEach(label => { label.style.display = 'none'; });
-}
-
 // define factors for radius (distance) of inner, outer, labels - relative to window height
 
 var radiusInnerFactor = 2.9;
 var radiusOuterFactor = 2.6;
 var radiusLabelsFactor = 2.25;
+
+// Disable 00-55 labels?
+// FIXME: Geometry, inner clock scaling
+if (urlParams.has('labels') && (urlParams.get('labels') == 'none')){
+	console.log('No labels.');
+	var labels = document.querySelectorAll('.labels');
+	labels.forEach(label => { label.style.display = 'none'; });
+	radiusInnerFactor = 2.3;
+	radiusOuterFactor = 2.1;
+	radiusLabelsFactor = 0;
+}
+
 
 // define factors for distance (up and down) for meta information = #studio, #day
 
