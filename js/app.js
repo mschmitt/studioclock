@@ -58,6 +58,7 @@ if (urlParams.has('theme')) {
 		labels.forEach(label => { label.style['color'] = 'green'; });
 		labels.forEach(label => { label.style['opacity'] = '1.0'; });
 		document.getElementById('pseudo-active').style['color'] = 'red';
+		document.getElementById('pseudo-outer').style['color'] = 'green';
 		document.getElementById('studio').style['color'] = 'yellow';
 		document.getElementById('studio').style['opacity'] = '1.0';
 		document.getElementById('clock').style['color'] = 'red';
