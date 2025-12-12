@@ -5,14 +5,14 @@
 // -----------------------------------
 var urlParams = new URLSearchParams(window.location.search);
 
-// customization of update interval
+// customization of update interval -> update_interval_ms=10
 var update_interval_ms = 250;
 if (urlParams.has('update_interval_ms')){
         update_interval_ms = urlParams.get('update_interval_ms');
 }
 console.log('Will update every ' + update_interval_ms + ' milliseconds.');
 
-// customization of title above digital clock
+// customization of title above digital clock -> studio=Foo+123
 var studio = '_dow_';
 if (urlParams.has('studio')){
         studio = urlParams.get('studio');
@@ -32,7 +32,7 @@ var radiusLabelsFactor = 2.25;
 var distanceUp = 0.75;
 var distanceDown = 1.25;
 
-// Disable 00-55 labels?
+// Disable 00-55 labels? -> labels=none
 if (urlParams.has('labels') && (urlParams.get('labels') == 'none')){
 	console.log('No labels.');
 	var labels = document.querySelectorAll('.labels');
@@ -47,9 +47,35 @@ if (urlParams.has('labels') && (urlParams.get('labels') == 'none')){
 	// Fudge Title/Time/Date font sizes (note: type-small is in CSS but unused)
 	var medium = document.querySelectorAll('.type-medium');
 	medium.forEach(element => { element.style['font-size'] = '8.0vmin'; });
-	var large = document.querySelectorAll('#clock.type-large');
+	var large = document.querySelectorAll('.type-large');
 	large.forEach(element => { element.style['font-size'] = '12.0vmin'; });
 }
+
+// Higher contrast? -> theme=brightred
+if (urlParams.has('theme')) { 
+	if (urlParams.get('theme') == 'brighter'){
+		var labels = document.querySelectorAll('.labels');
+		labels.forEach(label => { label.style['color'] = 'green'; });
+		labels.forEach(label => { label.style['opacity'] = '1.0'; });
+		document.getElementById('pseudo-active').style['color'] = 'red';
+		document.getElementById('studio').style['color'] = 'yellow';
+		document.getElementById('studio').style['opacity'] = '1.0';
+		document.getElementById('clock').style['color'] = 'red';
+		document.getElementById('day').style['color'] = 'orange';
+		document.getElementById('day').style['opacity'] = '1.0';
+	}
+	if (urlParams.get('theme') == 'mono'){
+		var labels = document.querySelectorAll('.labels');
+		labels.forEach(label => { label.style['color'] = '#999999'; });
+		document.getElementById('pseudo-active').style['color'] = 'white';
+		document.getElementById('pseudo-outer').style['color'] = '#333333';
+		document.getElementById('pseudo-inner').style['color'] = '#222222';
+		document.getElementById('studio').style['color'] = 'white';
+		document.getElementById('clock').style['color'] = 'white';
+		document.getElementById('day').style['color'] = 'white';
+	}
+}
+
 
 // define factors for dot size (inner and outer circle) - relative to window height - the smaller the value, the larger the dot size (initial value 60)
 
