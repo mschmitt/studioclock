@@ -3,6 +3,23 @@
 // -----------------------------------
 // --- customize ---------------------
 // -----------------------------------
+var urlParams = new URLSearchParams(window.location.search);
+
+// customization of update interval
+var update_interval_ms = 1000;
+if (urlParams.has('update_interval_ms')){
+        update_interval_ms = urlParams.get('update_interval_ms');
+}
+console.log('Will update every ' + update_interval_ms + ' milliseconds.');
+
+// customization of title above digital clock
+var title = 'STUDIO';
+if (urlParams.has('studio')){
+        studio = urlParams.get('studio');
+	studio = DOMPurify.sanitize(studio);
+	document.getElementById('studio').innerHTML = studio;
+}
+console.log('Studio name: ' + studio);
 
 // define factors for radius (distance) of inner, outer, labels - relative to window height
 
@@ -176,7 +193,7 @@ initMetaPosition(distanceUp,distanceDown);
 // every second (interval: 1000 ms) update the clock (numbers and dots)
 
 updateClock();
-setInterval(updateClock, 1000);
+setInterval(updateClock, update_interval_ms);
 
 // when window is resized, reload the whole page in order to redraw everything (with new dimension)
 

@@ -1,3 +1,14 @@
+* Addendum for the *mschmitt/studioclock* fork
+  * Customizable via URL parameters:
+    * Update interval in milliseconds: `index.html?update_interval_ms=10`
+    * Studio name: `index.html?studio=Frankfurt`
+    * Both: `index.html?studio=Frankfurt&update_interval_ms=10`
+  * License information for *purify.min.js*:
+    * Copyright 2025 Dr.-Ing. Mario Heiderich, Cure53
+    * https://github.com/cure53/DOMPurify/blob/main/LICENSE
+
+---
+
 # studioclock - README
 
 Studioclock is a simple local web implentation of the clocks used in radio and video broadcast studio environments.
