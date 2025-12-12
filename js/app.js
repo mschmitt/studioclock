@@ -21,6 +21,14 @@ if (urlParams.has('studio')){
 }
 console.log('Studio name: ' + studio);
 
+// Disable 00-55 labels?
+// FIXME: Geometry, fudge radiuses below
+if (urlParams.has('labels') && (urlParams.get('labels') == 'none')){
+	console.log('No labels.');
+	var labels = document.querySelectorAll('.labels');
+	labels.forEach(label => { label.style.display = 'none'; });
+}
+
 // define factors for radius (distance) of inner, outer, labels - relative to window height
 
 var radiusInnerFactor = 2.9;
