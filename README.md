@@ -3,6 +3,7 @@
     * Update interval in milliseconds: `index.html?update_interval_ms=10`
     * Studio name: `index.html?studio=Frankfurt`
     * Both: `index.html?studio=Frankfurt&update_interval_ms=10`
+    * Hide the outer 00-55 labels: `index.html?labels=none`
   * Published on github pages:
     * https://mschmitt.github.io/studioclock/?studio=Frankfurt&update_interval_ms=10
   * License information for *purify.min.js*:
