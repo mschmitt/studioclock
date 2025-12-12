@@ -2,7 +2,7 @@
   * Customizable via URL parameters:
     * Update interval in milliseconds: `index.html?update_interval_ms=10`
     * Studio name: `index.html?studio=Frankfurt`
-      * Use `studio=_dow_` to display the day of week
+      * Default (changed from upstream): display the day of week
     * Both: `index.html?studio=Frankfurt&update_interval_ms=10`
     * Hide the outer 00-55 labels: `index.html?labels=none`
   * Published on github pages:

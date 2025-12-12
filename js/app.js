@@ -13,7 +13,7 @@ if (urlParams.has('update_interval_ms')){
 console.log('Will update every ' + update_interval_ms + ' milliseconds.');
 
 // customization of title above digital clock
-var studio = 'STUDIO';
+var studio = '_dow_';
 if (urlParams.has('studio')){
         studio = urlParams.get('studio');
 	studio = DOMPurify.sanitize(studio);
