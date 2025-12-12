@@ -7,6 +7,8 @@
     * Both: `index.html?studio=Frankfurt&update_interval_ms=10`
     * Hide the outer 00-55 labels: `index.html?labels=none`
     * Color themes: `index.html?theme=brighter` or `theme=mono`
+  * mschmitt's preferred invocation:
+    * https://mschmitt.github.io/studioclock/?update_interval_ms=10&labels=none&theme=brighter
   * Published on github pages:
     * https://mschmitt.github.io/studioclock/?studio=Frankfurt&update_interval_ms=10
   * License information for *purify.min.js*:
