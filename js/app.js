@@ -132,6 +132,14 @@ function initInnerClock(theLimit,theOffset,theColor) {
 		theRadian = intervalInner*(i+theOffset);
 		var x = centerX+radiusInner*Math.cos(theRadian-Math.PI/2);
 		var y = centerY+radiusInner*Math.sin(theRadian-Math.PI/2);
+
+		// mschmitt: Explicitly paint over artifacts around the dot
+		context.beginPath();
+		context.arc(x,y,dotSize+1,0,Math.PI*2);
+		context.closePath();
+		context.fillStyle = 'black';
+		context.fill();
+
 		context.beginPath();
 		context.arc(x,y,dotSize,0,Math.PI*2);
 		context.closePath();
@@ -147,6 +155,14 @@ function initOuterClock(theLimit,theOffset,theColor) {
 		theRadian = intervalOuter*(i+theOffset);
 		var x = centerX+radiusOuter*Math.cos(theRadian-Math.PI/2);
 		var y = centerY+radiusOuter*Math.sin(theRadian-Math.PI/2);
+
+		// mschmitt: Explicitly paint over artifacts around the dot
+		context.beginPath();
+		context.arc(x,y,dotSize+1,0,Math.PI*2);
+		context.closePath();
+		context.fillStyle = 'black';
+		context.fill();
+
 		context.beginPath();
 		context.arc(x,y,dotSize,0,Math.PI*2);		
 		context.closePath();
