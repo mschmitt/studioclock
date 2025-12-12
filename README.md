@@ -1,6 +1,7 @@
 * Addendum for the *mschmitt/studioclock* fork
   * Customizable via URL parameters:
     * Update interval in milliseconds: `index.html?update_interval_ms=10`
+      * Default (changed from upstream): 250 ms
     * Studio name: `index.html?studio=Frankfurt`
       * Default (changed from upstream): display the day of week
     * Both: `index.html?studio=Frankfurt&update_interval_ms=10`

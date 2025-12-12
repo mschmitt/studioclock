@@ -6,7 +6,7 @@
 var urlParams = new URLSearchParams(window.location.search);
 
 // customization of update interval
-var update_interval_ms = 1000;
+var update_interval_ms = 250;
 if (urlParams.has('update_interval_ms')){
         update_interval_ms = urlParams.get('update_interval_ms');
 }
