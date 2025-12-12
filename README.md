@@ -6,6 +6,7 @@
       * Default (changed from upstream): display the day of week
     * Both: `index.html?studio=Frankfurt&update_interval_ms=10`
     * Hide the outer 00-55 labels: `index.html?labels=none`
+    * Color themes: `index.html?theme=brighter` or `theme=mono`
   * Published on github pages:
     * https://mschmitt.github.io/studioclock/?studio=Frankfurt&update_interval_ms=10
   * License information for *purify.min.js*:
