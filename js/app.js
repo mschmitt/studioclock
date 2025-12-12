@@ -27,22 +27,29 @@ var radiusInnerFactor = 2.9;
 var radiusOuterFactor = 2.6;
 var radiusLabelsFactor = 2.25;
 
-// Disable 00-55 labels?
-// FIXME: Geometry, inner clock scaling
-if (urlParams.has('labels') && (urlParams.get('labels') == 'none')){
-	console.log('No labels.');
-	var labels = document.querySelectorAll('.labels');
-	labels.forEach(label => { label.style.display = 'none'; });
-	radiusInnerFactor = 2.3;
-	radiusOuterFactor = 2.1;
-	radiusLabelsFactor = 0;
-}
-
-
 // define factors for distance (up and down) for meta information = #studio, #day
 
 var distanceUp = 0.75;
 var distanceDown = 1.25;
+
+// Disable 00-55 labels?
+if (urlParams.has('labels') && (urlParams.get('labels') == 'none')){
+	console.log('No labels.');
+	var labels = document.querySelectorAll('.labels');
+	labels.forEach(label => { label.style['display'] = 'none'; });
+	// Fudge radiuses
+	radiusInnerFactor = 2.3;
+	radiusOuterFactor = 2.1;
+	radiusLabelsFactor = 0.0; // Not required now
+	// Fudge Title/Time/Date spacing
+	distanceUp = 0.7;
+	distanceDown = 1.3;
+	// Fudge Title/Time/Date font sizes (note: type-small is in CSS but unused)
+	var medium = document.querySelectorAll('.type-medium');
+	medium.forEach(element => { element.style['font-size'] = '8.0vmin'; });
+	var large = document.querySelectorAll('#clock.type-large');
+	large.forEach(element => { element.style['font-size'] = '12.0vmin'; });
+}
 
 // define factors for dot size (inner and outer circle) - relative to window height - the smaller the value, the larger the dot size (initial value 60)
 
