@@ -2,9 +2,9 @@
   * Customizable via URL parameters:
     * Update interval in milliseconds: `index.html?update_interval_ms=10`
       * Default (changed from upstream): 250 ms
-    * Studio name: `index.html?studio=Frankfurt`
+    * Studio name: `index.html?title=Frankfurt`
       * Default (changed from upstream): display the day of week
-    * Both: `index.html?studio=Frankfurt&update_interval_ms=10`
+    * Both: `index.html?title=Frankfurt&update_interval_ms=10`
     * Hide the outer 00-55 labels: `index.html?labels=none`
     * Color themes: `index.html?theme=brighter` or `theme=mono`
   * mschmitt's preferred invocation:
