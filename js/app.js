@@ -16,7 +16,7 @@ console.log('Will update every ' + update_interval_ms + ' milliseconds.');
 var title = '_dow_';
 if (urlParams.has('title')){
         title = urlParams.get('title');
-	document.getElementById('studio').textContent = title;
+	studio.textContent = title;
 }
 console.log('Title: ' + title);
 
@@ -230,7 +230,7 @@ function updateClock() {
 	day.textContent = dateFormat;
 
 	if ( title === '_dow_' ) {
-		document.getElementById('studio').textContent = time.toLocaleDateString(navigator.language, { weekday: 'long' });
+		studio.textContent = time.toLocaleDateString(navigator.language, { weekday: 'long' });
 	}
 	
 	if ( secondsInt == 0 ) {
