@@ -12,14 +12,13 @@ if (urlParams.has('update_interval_ms')){
 }
 console.log('Will update every ' + update_interval_ms + ' milliseconds.');
 
-// customization of title above digital clock -> studio=Foo+123
-var studio = '_dow_';
-if (urlParams.has('studio')){
-        studio = urlParams.get('studio');
-	studio = DOMPurify.sanitize(studio);
-	document.getElementById('studio').innerHTML = studio;
+// customization of title above digital clock -> title=Foo+123
+var title = '_dow_';
+if (urlParams.has('title')){
+        title = urlParams.get('title');
+	document.getElementById('studio').textContent = title;
 }
-console.log('Studio name: ' + studio);
+console.log('Title: ' + title);
 
 // define factors for radius (distance) of inner, outer, labels - relative to window height
 
@@ -230,9 +229,8 @@ function updateClock() {
 	clock.textContent = clockStr;
 	day.textContent = dateFormat;
 
-	if ( studio === '_dow_' ) {
-		console.log('hallo');
-		document.getElementById('studio').innerHTML = time.toLocaleDateString(navigator.language, { weekday: 'long' });
+	if ( title === '_dow_' ) {
+		document.getElementById('studio').textContent = time.toLocaleDateString(navigator.language, { weekday: 'long' });
 	}
 	
 	if ( secondsInt == 0 ) {

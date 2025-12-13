@@ -9,9 +9,6 @@
     * Color themes: `index.html?theme=brighter` or `theme=mono`
   * mschmitt's preferred invocation:
     * https://mschmitt.github.io/studioclock/?update_interval_ms=10&labels=none&theme=brighter
-  * License information for *purify.min.js*:
-    * Copyright 2025 Dr.-Ing. Mario Heiderich, Cure53
-    * https://github.com/cure53/DOMPurify/blob/main/LICENSE
 
 ---
 
